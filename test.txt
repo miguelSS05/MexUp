@@ -1,2 +1,0 @@
-Este es un archivo de prueba
-Para demostrar las operaciones bloqueantes y no bloqueantes mediante la lectura de 
