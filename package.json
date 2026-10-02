@@ -11,11 +11,15 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@types/autocannon": "^7.12.7",
     "@types/node": "^26.6.2",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
-   "imports": {
+  "imports": {
     "#root/*.js": "./*.js"
+  },
+  "dependencies": {
+    "autocannon": "^8.0.0"
   }
 }

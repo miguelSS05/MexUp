@@ -1,4 +1,4 @@
-import { getClients, modifyClient, newClient, deleteClient, tareaBloqueante, tareaNoBloqueante } from '../controller/index.js'
+import { getClients, modifyClient, newClient, deleteClient, tareaBloqueante, tareaNoBloqueante, TestAutocannon, StreamBackpressureTest, StreamPipelineTest } from '../controller/index.js'
 import { IncomingMessage, ServerResponse  } from "http";
 import { verifyLogin } from '../middleware/auth.middleware.js'
 import { sendResponse } from '../utils/serverResponse.js'
@@ -12,7 +12,10 @@ export function router(req: IncomingMessage, res: ServerResponse)  {
     if (method == 'GET') {
         if (ruta == '/clientes') { if (!verifyLogin(req, res)) return; getClients(req, res) }
         else if (ruta == '/bloqueante') tareaBloqueante(req, res)
-        else if (ruta == '/no-bloqueante') tareaNoBloqueante(req, res)
+        else if (ruta == '/no-bloqueante') tareaNoBloqueante(req, res)  
+        else if (ruta == '/autocannon') TestAutocannon(req, res)
+        else if (ruta == '/stream/1') StreamBackpressureTest(req, res)
+        else if (ruta == '/stream/2') StreamPipelineTest(req, res)
         else { sendResponse(res, 404, "Ruta inválida"); }
         //if (ruta == 'productos') //getProductos
 	} else if (method == 'POST') {

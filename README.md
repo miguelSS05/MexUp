@@ -27,24 +27,17 @@ npm run dev
 ## Tecnologias
 - Node.js
 - TypeScript
+- Autocannon
 
 
-## Semanas
+## Última semana
 
-### Semana 1
-Etiqueta: v1.0.0-http-core
-- Servidor HTTP Nativo
-- Demostracion de hilo bloqueante / no bloqueante
-- Carga de variables de entorno
-- .gitignore y README.md
-
-### Semana 2
-Etiqueta: v1.1.0-native-routing
-- Middleware de login utilizando el header islogged
-- Uso de try/catch en los controladores
-- Respuesta del servidor empleando códigos HTTP y el header application/json
-- Uso de los métodos GET, POST, PUT y DELETE para interactuar con los clientes enviando el ID en el query (json)
-- Recibir datos usando req.on('data') y req.on('end')
+### Semana 3 
+Etiqueta: v1.2.0-streams-buffers-cluster
+- Prueba de carga utilizando la dependencia autocannon, disponible en el endpoint /autocannon especificando una prueba con el header "test"
+- Uso del módulo cluster para crear una instancia en cada núcleo
+- Procesamiento de archivos mediante readable, writeable, transform y pipeline
+- Manejo de backpressure empleando la función .write() del flujo de escritura
 
 Endpoints disponibles:
 
@@ -52,15 +45,10 @@ Endpoints disponibles:
 GET /clientes
 GET /bloqueante
 GET /no-bloqueante
+GET /autocannon
+GET /stream/1
+GET /stream/2
 POST /clientes
 PUT /clientes
 DELETE /clientes
-```
-
-Ejemplo de uso
-
-```
-curl -X POST http://127.0.0.1:3000/clientes -H "Content-Type: application/json" \
--H "islogged: 1" \
--d '{"id": 2, "nombre": "daniel", "apellido": "leyva", "edad": 21}'
 ```
